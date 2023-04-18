@@ -8,13 +8,12 @@ const { sendFile } = require("express/lib/response");
 const cors = require("cors");
 connectDB();
 const app = express();
-const corsOptions = {
-  origin: "https://avinashid.github.io",
-};
+
+app.use(cors());
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use("/api/users", cors(corsOptions), require("./routes/userRoutes"));
+app.use("/api/users", require("./routes/userRoutes"));
 
 // Serve Frontend
 // if(process.env.NODE_ENV === 'production'){
