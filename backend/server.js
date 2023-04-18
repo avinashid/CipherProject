@@ -9,7 +9,7 @@ const cors = require("cors");
 connectDB();
 const app = express();
 const corsOptions = {
-  origin: "https://avinashid.github.io/CipherFront",
+  origin: "*",
 };
 
 app.use(express.json());
